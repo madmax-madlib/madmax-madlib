@@ -1,10 +1,10 @@
 {
   "name": "madmax-madlib",
   "version": "1.0.0",
-  "description": "",
+  "description": "Madlibs with a fun UI",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/madmax-madlib/madmax-madlib/issues"
   },
-  "homepage": "https://github.com/madmax-madlib/madmax-madlib#readme"
+  "homepage": "https://github.com/madmax-madlib/madmax-madlib#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9"
+  }
 }

@@ -1,5 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+var exHandlebars = require("express-handlebars");
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -22,6 +24,10 @@ app.use(methodOverride("_method"));
 // Use handlebars as view engine, and set default layout to main.handlebars
 app.engine("handlebars", exHandlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+//Routes
+require("./routes/madlib-routes.js")(app);
+//require("./routes/user-routes.js")(app);
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
