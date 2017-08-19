@@ -32,6 +32,37 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
 
+        segment5: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        segment6: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        segment7: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        segment8: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        segment9: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        segment10: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+
     });
 
     return Stories;
