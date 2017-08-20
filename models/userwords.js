@@ -1,24 +1,59 @@
 module.exports = function (sequelize, DataTypes) {
     var User_words = sequelize.define("Input", {
-        verb: {
-            type: DataTypes.STRING,
-            allowNull: false
-        
-        },
 
         noun: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
+        pluralNoun: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        person: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        place: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        number: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        verb: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+ 
         adjective: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
-        adverb: {
+        bodyPart: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
+        },
+
+        foodType: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        verb_ing: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
+        animal: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
 
     });
