@@ -27,18 +27,26 @@ function occurrences(string, subString, allowOverlapping) {
     return n;
 }
 
-module.exports = function(dbResponse) {
+module.exports = function (dbResponse) {
     var story = dbResponse.segment1 + dbResponse.segment2 + dbResponse.segment3 + dbResponse.segment4 + dbResponse.segment5 + dbResponse.segment6 + dbResponse.segment7 + dbResponse.segment8 + dbResponse.segment9 + dbResponse.segment10;
     var wordCountObject = new Object();
-    
+
     wordCountObject.noun = occurrences(story, "<<noun>>");
-    wordCountObject.verb = occurrences(story, "<<verb>>");
-    wordCountObject.adjective = occurrences(story, "<<adjective>>");
-    wordCountObject.verb_ing = occurrences(story, "<<verb ending in ing>>");
     wordCountObject.plural_noun = occurrences(story, "<<plural noun>>");
     wordCountObject.place = occurrences(story, "<<place>>");
     wordCountObject.food = occurrences(story, "<<type of food>>");
     wordCountObject.animal = occurrences(story, "<<animal>>");
+    wordCountObject.number = occurrences(story, "<<number>>");
+    wordCountObject.bodyPart = occurrences(story, "<<part of body>>");
+
+    wordCountObject.verb = occurrences(story, "<<verb>>");
+    wordCountObject.verb_ing = occurrences(story, "<<verb ending in ing>>");
+    wordCountObject.verb_ed = occurrences(story, "<<verb ending in ed>>");
+
+    wordCountObject.adjective = occurrences(story, "<<adjective>>");
+    
+    wordCountObject.adverb = occurrences(story, "<<adverb>>");
+
     console.log(wordCountObject);
     return wordCountObject;
 }
