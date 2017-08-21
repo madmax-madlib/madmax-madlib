@@ -16,7 +16,6 @@ module.exports = function (app) {
     // Routes go here
     app.get("/", function (req, res) {
         db.Stories.findAll({}).then(function (dbResponse) {
-            console.log(JSON.parse(JSON.stringify(dbResponse))[0]);
             var storyObject = {
                 story: dbResponse
             };
