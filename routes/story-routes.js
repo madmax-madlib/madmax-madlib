@@ -21,7 +21,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbPost) {
-            res.render("inputWordForm", {
+            res.render("form", {
                 helpers: {
                     times: function (n, block) {
                         var accum = '';
