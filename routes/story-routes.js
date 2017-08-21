@@ -14,6 +14,16 @@ var deriveMissingWords = require("../deriveMissingWords.js");
 // =============================================================
 module.exports = function (app) {
     // Routes go here
+    app.get("/", function (req, res) {
+        db.Stories.findAll({}).then(function (dbResponse) {
+            console.log(JSON.parse(JSON.stringify(dbResponse))[0]);
+            var storyObject = {
+                story: dbResponse
+            };
+            res.render("menu", storyObject);
+        });
+    });
+
     app.get("/story/:id", function (req, res) {
         console.log("story get worked");
         db.Stories.findOne({
@@ -29,7 +39,7 @@ module.exports = function (app) {
                             accum += block.fn(i);
                         return accum;
                     },
-                    randWord: function(){
+                    randWord: function () {
                         return Math.random().toString(36).substring(7);
                     }
                 },
