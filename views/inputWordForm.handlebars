@@ -1,0 +1,108 @@
+<div class="container">
+    <h2 class="white-text">{{title}}</h2>
+    <h4 class="white-text">Provide words to fill in the story</h4>
+    <ul class="collapsible white" data-collapsible="expandable">
+        <li>
+            <div class="collapsible-header">Nouns</div>
+            <div class="collapsible-body">
+                {{#if num.noun}}
+                <h5>Noun</h5>
+                <div class="row">
+                    {{#times num.noun}}
+                    <div class="input-field col s12 m6">
+                        <input id="noun" type="text" class="validate">
+                        <label for="noun">(i.e. chair, orange juice, monkey)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.plural_noun}}
+                <h5>Plural Noun</h5>
+                <div class="row">
+                    {{#times num.plural_noun}}
+                    <div class="input-field col s12 m6">
+                        <input id="plural_noun" type="text" class="validate">
+                        <label for="plural_noun">(i.e. eggs, stars, mice)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.animal}}
+                <h5>Animal</h5>
+                <div class="row">
+                    {{#times num.animal}}
+                    <div class="input-field col s12 m6">
+                        <input id="animal" type="text" class="validate">
+                        <label for="animal">(i.e. cheetah, squirrel, lizard)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.place}}
+                <h5>A Place</h5>
+                <div class="row">
+                    {{#times num.place}}
+                    <div class="input-field col s12 m6">
+                        <input id="place" type="text" class="validate">
+                        <label for="place">(i.e. San Francisco, the bathroom, Applebees)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.body_part}}
+                <h5>Part of the Body</h5>
+                <div class="row">
+                    {{#times num.body_part}}
+                    <div class="input-field col s12 m6">
+                        <input id="body_part" type="text" class="validate">
+                        <label for="body_part">(i.e. eyeball, arm, leg)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.food}}
+                <h5>Type of Food</h5>
+                <div class="row">
+                    {{#times num.food}}
+                    <div class="input-field col s12 m6">
+                        <input id="food" type="text" class="validate">
+                        <label for="food">(i.e. sushi, pie, burrito)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}
+            </div>
+        </li>
+        {{#if num.verb}}
+        <li>
+            <div class="collapsible-header">Verbs</div>
+            <div class="collapsible-body">
+                <div class="row">
+                {{#times num.verb}}
+                <div class="input-field col s12 m6">
+                    <input id="verb" type="text" class="validate">
+                    <label for="verb">(i.e. run, jump, chortle)</label>
+                </div>
+                {{/times}}
+                </div>
+            </div>
+        </li>
+        {{/if}} {{#if num.adjective}}
+        <li>
+            <div class="collapsible-header">Adjectives</div>
+            <div class="collapsible-body">
+                <div class="row">
+                {{#times num.adjective}}
+                <div class="input-field col s12 m6">
+                    <input id="adjective" type="text" class="validate">
+                    <label for="adjective">(i.e. smart, smelly, loud)</label>
+                </div> {{/times}}
+                </div>
+            </div>
+        </li>
+        {{/if}} {{!--
+        <li>
+            <div class="collapsible-header">Adverbs</div>
+            <div class="collapsible-body">
+                {{#times this.adverb}}
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">(i.e. sushi, pie, burrito)</label> {{/times}}
+            </div>
+        </li> --}}
+    </ul>
+</div>
