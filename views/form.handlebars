@@ -1,161 +1,160 @@
-<div class="container">
-    <h2 class="white-text">{{title}}</h2>
-    <h4 class="white-text">Provide words to fill in the story</h4>
-    <form class="" action="/" method="POST">
-        <ul class="collapsible white" data-collapsible="expandable">
-            <li>
-                <div class="collapsible-header">Nouns</div>
-                <div class="collapsible-body">
-                    {{#if num.noun}}
-                    <h6>Noun</h6>
-                    <div class="row">
-                        {{#times num.noun}}
-                        <div class="input-field col s12 m6">
-                            <input id="noun" type="text" class="validate">
-                            <label for="noun">(i.e. chair, orange juice, monkey)</label>
-                        </div>
-                        {{/times}}
+<h2 class="grey-text text-lighten-2 pageTitle">
+    {{title}}</h2>
+<h4 class="grey-text text-lighten-2 pageTitle">Provide words to fill in the story</h4>
+<form class="" action="/" method="POST">
+    <ul class="collapsible white" data-collapsible="expandable">
+        <li>
+            <div class="collapsible-header">Nouns</div>
+            <div class="collapsible-body">
+                {{#if num.noun}}
+                <h6>Noun</h6>
+                <div class="row">
+                    {{#times num.noun}}
+                    <div class="input-field col s12 m6">
+                        <input id="noun" type="text" class="validate">
+                        <label for="noun">(i.e. chair, orange juice, monkey)</label>
                     </div>
-                    {{/if}} {{#if num.plural_noun}}
-                    <h6>Plural Noun</h6>
-                    <div class="row">
-                        {{#times num.plural_noun}}
-                        <div class="input-field col s12 m6">
-                            <input id="plural_noun" type="text" class="validate">
-                            <label for="plural_noun">(i.e. eggs, stars, mice)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}} {{#if num.animal}}
-                    <h6>Animal</h6>
-                    <div class="row">
-                        {{#times num.animal}}
-                        <div class="input-field col s12 m6">
-                            <input id="animal" type="text" class="validate">
-                            <label for="animal">(i.e. cheetah, squirrel, lizard)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}} {{#if num.place}}
-                    <h6>A Place</h6>
-                    <div class="row">
-                        {{#times num.place}}
-                        <div class="input-field col s12 m6">
-                            <input id="place" type="text" class="validate">
-                            <label for="place">(i.e. San Francisco, the bathroom, Applebees)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}} {{#if num.body_part}}
-                    <h6>Part of the Body</h6>
-                    <div class="row">
-                        {{#times num.body_part}}
-                        <div class="input-field col s12 m6">
-                            <input id="body_part" type="text" class="validate">
-                            <label for="body_part">(i.e. eyeball, arm, leg)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}} {{#if num.food}}
-                    <h6>Type of Food</h6>
-                    <div class="row">
-                        {{#times num.food}}
-                        <div class="input-field col s12 m6">
-                            <input id="food" type="text" class="validate">
-                            <label for="food">(i.e. sushi, pie, burrito)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}}{{#if num.person}}
-                    <h6>Person</h6>
-                    <div class="row">
-                        {{#times num.person}}
-                        <div class="input-field col s12 m6">
-                            <input id="person" type="text" class="validate">
-                            <label for="person">(i.e. Mr. Rogers, Martha Stewart)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}}{{#if num.number}}
-                    <h6>Number</h6>
-                    <div class="row">
-                        {{#times num.number}}
-                        <div class="input-field col s12 m6">
-                            <input id="person" type="text" class="validate">
-                            <label for="person">(i.e. 7, a billion)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}}
+                    {{/times}}
                 </div>
-            </li>
-            {{#if num.verb}}
-            <li>
-                <div class="collapsible-header">Verbs</div>
-                <div class="collapsible-body">
-                    {{#if num.verb}}
-                    <h6>Verb</h6>
-                    <div class="row">
-                        {{#times num.verb}}
-                        <div class="input-field col s12 m6">
-                            <input id="verb" type="text" class="validate">
-                            <label for="verb">(i.e. run, jump, chortle)</label>
-                        </div>
-                        {{/times}}
+                {{/if}} {{#if num.plural_noun}}
+                <h6>Plural Noun</h6>
+                <div class="row">
+                    {{#times num.plural_noun}}
+                    <div class="input-field col s12 m6">
+                        <input id="plural_noun" type="text" class="validate">
+                        <label for="plural_noun">(i.e. eggs, stars, mice)</label>
                     </div>
-                    {{/if}}{{#if num.verb_ing}}
-                    <h6>Verb Ending in 'ing'</h6>
-                    <div class="row">
-                        {{#times num.food}}
-                        <div class="input-field col s12 m6">
-                            <input id="food" type="text" class="validate">
-                            <label for="food">(i.e. dancing, singing, flipping)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}}{{#if num.verb_ed}}
-                    <h6>Verb Ending in 'ed'</h6>
-                    <div class="row">
-                        {{#times num.verb_ed}}
-                        <div class="input-field col s12 m6">
-                            <input id="food" type="text" class="validate">
-                            <label for="food">(i.e. guzzled, flopped, opened)</label>
-                        </div>
-                        {{/times}}
-                    </div>
-                    {{/if}}
+                    {{/times}}
                 </div>
-            </li>
-            {{/if}} {{#if num.adjective}}
-            <li>
-                <div class="collapsible-header">Adjectives</div>
-                <div class="collapsible-body">
-                    <div class="row">
-                        {{#times num.adjective}}
-                        <div class="input-field col s12 m6">
-                            <input id="adjective" type="text" class="validate">
-                            <label for="adjective">(i.e. smart, smelly, loud)</label>
-                        </div> {{/times}}
+                {{/if}} {{#if num.animal}}
+                <h6>Animal</h6>
+                <div class="row">
+                    {{#times num.animal}}
+                    <div class="input-field col s12 m6">
+                        <input id="animal" type="text" class="validate">
+                        <label for="animal">(i.e. cheetah, squirrel, lizard)</label>
                     </div>
+                    {{/times}}
                 </div>
-            </li>
-            {{/if}} {{#if num.adverb}}
-            <li>
-                <div class="collapsible-header">Adverb</div>
-                <div class="collapsible-body">
-                    <div class="row">
-                        {{#times num.adverb}}
-                        <div class="input-field col s12 m6">
-                            <input id="adjective" type="text" class="validate">
-                            <label for="adjective">(i.e. briskly, sheepishly, recklessly)</label>
-                        </div> {{/times}}
+                {{/if}} {{#if num.place}}
+                <h6>A Place</h6>
+                <div class="row">
+                    {{#times num.place}}
+                    <div class="input-field col s12 m6">
+                        <input id="place" type="text" class="validate">
+                        <label for="place">(i.e. San Francisco, the bathroom, Applebees)</label>
                     </div>
+                    {{/times}}
                 </div>
-            </li>
-            {{/if}}
-        </ul>
-        <button class="btn waves-effect waves-light salmon" type="submit" name="action">Submit
+                {{/if}} {{#if num.body_part}}
+                <h6>Part of the Body</h6>
+                <div class="row">
+                    {{#times num.body_part}}
+                    <div class="input-field col s12 m6">
+                        <input id="body_part" type="text" class="validate">
+                        <label for="body_part">(i.e. eyeball, arm, leg)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}} {{#if num.food}}
+                <h6>Type of Food</h6>
+                <div class="row">
+                    {{#times num.food}}
+                    <div class="input-field col s12 m6">
+                        <input id="food" type="text" class="validate">
+                        <label for="food">(i.e. sushi, pie, burrito)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.person}}
+                <h6>Person</h6>
+                <div class="row">
+                    {{#times num.person}}
+                    <div class="input-field col s12 m6">
+                        <input id="person" type="text" class="validate">
+                        <label for="person">(i.e. Mr. Rogers, Martha Stewart)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.number}}
+                <h6>Number</h6>
+                <div class="row">
+                    {{#times num.number}}
+                    <div class="input-field col s12 m6">
+                        <input id="person" type="text" class="validate">
+                        <label for="person">(i.e. 7, a billion)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}
+            </div>
+        </li>
+        {{#if num.verb}}
+        <li>
+            <div class="collapsible-header">Verbs</div>
+            <div class="collapsible-body">
+                {{#if num.verb}}
+                <h6>Verb</h6>
+                <div class="row">
+                    {{#times num.verb}}
+                    <div class="input-field col s12 m6">
+                        <input id="verb" type="text" class="validate">
+                        <label for="verb">(i.e. run, jump, chortle)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.verb_ing}}
+                <h6>Verb Ending in 'ing'</h6>
+                <div class="row">
+                    {{#times num.food}}
+                    <div class="input-field col s12 m6">
+                        <input id="food" type="text" class="validate">
+                        <label for="food">(i.e. dancing, singing, flipping)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.verb_ed}}
+                <h6>Verb Ending in 'ed'</h6>
+                <div class="row">
+                    {{#times num.verb_ed}}
+                    <div class="input-field col s12 m6">
+                        <input id="food" type="text" class="validate">
+                        <label for="food">(i.e. guzzled, flopped, opened)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}
+            </div>
+        </li>
+        {{/if}} {{#if num.adjective}}
+        <li>
+            <div class="collapsible-header">Adjectives</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    {{#times num.adjective}}
+                    <div class="input-field col s12 m6">
+                        <input id="adjective" type="text" class="validate">
+                        <label for="adjective">(i.e. smart, smelly, loud)</label>
+                    </div> {{/times}}
+                </div>
+            </div>
+        </li>
+        {{/if}} {{#if num.adverb}}
+        <li>
+            <div class="collapsible-header">Adverb</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    {{#times num.adverb}}
+                    <div class="input-field col s12 m6">
+                        <input id="adjective" type="text" class="validate">
+                        <label for="adjective">(i.e. briskly, sheepishly, recklessly)</label>
+                    </div> {{/times}}
+                </div>
+            </div>
+        </li>
+        {{/if}}
+    </ul>
+    <button class="btn waves-effect waves-light salmon" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
         </button>
-    </form>
-</div>
+</form>
