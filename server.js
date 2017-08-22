@@ -26,11 +26,11 @@ app.engine("handlebars", exHandlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //Routes
-require("./routes/madlib-routes.js")(app);
-//require("./routes/user-routes.js")(app);
+require("./routes/story-routes.js")(app);
+require("./routes/userwords-routes.js")(app);
 
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
 });
