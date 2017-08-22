@@ -58,10 +58,7 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    // User_words.associate = function(models) {
-    //     User_words.hasOne(models.Stories,{
-
-    //     });
-    // }
+    User_words.associate = function(models) {
+        User_words.belongsTo(models.Stories);
     
     return User_words;
