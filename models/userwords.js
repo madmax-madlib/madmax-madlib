@@ -62,3 +62,4 @@ module.exports = function (sequelize, DataTypes) {
         User_words.belongsTo(models.Stories);
     
     return User_words;
+}
