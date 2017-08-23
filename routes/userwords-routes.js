@@ -13,7 +13,6 @@ var storyBuilder = require("../storyBuilder.js");
 // Routes
 // =============================================================
 module.exports = function (app) {
-    // Routes go here
 
     // finds all of the user word input from enter-my-story form page to reveal-my-story page
     app.get("/reveal/:id", function (req, res) {
@@ -56,5 +55,4 @@ module.exports = function (app) {
             res.redirect("/reveal/" + dbUserWords.id);
         });
     });
-
 };
