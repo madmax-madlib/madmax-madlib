@@ -29,7 +29,7 @@ app.get("/reveal/:id", function(req, res) {
 		});
 	});
 
-app.post("/reveal", function(req, res){
+app.post("/api/formsubmit/", function(req, res){
 	db.User_words.create(req.body).then(function(dbUserwords) {
 		res.redirect("/reveal/" + id);
 	});
