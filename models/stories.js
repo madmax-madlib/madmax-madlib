@@ -4,17 +4,21 @@ module.exports = function (sequelize, DataTypes) {
 
         storyName: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
 
         storyDesc: {
             type: DataTypes.STRING,
-            allowNull: true        
+            allowNull: false        
         },
 
+        imageUrls: {
+            type: DataTypes.STRING,
+            allwNull: false
+        }
         segment1: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
 
         segment2: {
