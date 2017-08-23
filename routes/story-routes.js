@@ -29,7 +29,7 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbPost) {
+        }).then(function (dbResponse) {
             res.render("form", {
                 helpers: {
                     times: function (n, block) {
@@ -37,13 +37,10 @@ module.exports = function (app) {
                         for (var i = 0; i < n; ++i)
                             accum += block.fn(i);
                         return accum;
-                    },
-                    randWord: function () {
-                        return Math.random().toString(36).substring(7);
                     }
                 },
-                num: deriveMissingWords(dbPost),
-                title: dbPost.storyName
+                num: deriveMissingWords(dbResponse),
+                title: dbResponse.storyName
             });
         });
     });
