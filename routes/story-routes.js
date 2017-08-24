@@ -40,7 +40,8 @@ module.exports = function (app) {
                     }
                 },
                 num: deriveMissingWords(dbResponse),
-                title: dbResponse.storyName
+                title: dbResponse.storyName,
+                storyId: req.params.id
             });
         });
     });

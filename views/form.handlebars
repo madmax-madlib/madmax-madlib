@@ -1,8 +1,8 @@
 <h2 class="grey-text text-lighten-2 pageTitle">
     {{title}}</h2>
 <h4 class="grey-text text-lighten-2 pageTitle">Provide words to fill in the story</h4>
-<form class="" action="/" method="POST">
-    <ul class="collapsible white" data-collapsible="expandable">
+<form class="" action="/api/formsubmit" method="POST">
+    <ul class="collapsible white form-group" data-collapsible="expandable">
         <li>
             <div class="collapsible-header">Nouns</div>
             <div class="collapsible-body">
@@ -11,7 +11,7 @@
                 <div class="row">
                     {{#times num.noun}}
                     <div class="input-field col s12 m6">
-                        <input id="noun" type="text" class="validate">
+                        <input id="noun" type="text" class="validate" name="noun[]">
                         <label for="noun">(i.e. chair, Lunchables)</label>
                     </div>
                     {{/times}}
@@ -21,7 +21,7 @@
                 <div class="row">
                     {{#times num.plural_noun}}
                     <div class="input-field col s12 m6">
-                        <input id="plural_noun" type="text" class="validate">
+                        <input id="plural_noun" type="text" class="validate" name="pluralNoun[]">
                         <label for="plural_noun">(i.e. eggs, stars, mice)</label>
                     </div>
                     {{/times}}
@@ -31,7 +31,7 @@
                 <div class="row">
                     {{#times num.animal}}
                     <div class="input-field col s12 m6">
-                        <input id="animal" type="text" class="validate">
+                        <input id="animal" type="text" class="validate" name="animal[]">
                         <label for="animal">(i.e. cheetah, squirrel)</label>
                     </div>
                     {{/times}}
@@ -41,7 +41,7 @@
                 <div class="row">
                     {{#times num.place}}
                     <div class="input-field col s12 m6">
-                        <input id="place" type="text" class="validate">
+                        <input id="place" type="text" class="validate" name="place[]">
                         <label for="place">(i.e. China, bathroom)</label>
                     </div>
                     {{/times}}
@@ -51,7 +51,7 @@
                 <div class="row">
                     {{#times num.body_part}}
                     <div class="input-field col s12 m6">
-                        <input id="body_part" type="text" class="validate">
+                        <input id="body_part" type="text" class="validate" name="bodyPart[]">
                         <label for="body_part">(i.e. eyeball, arm, leg)</label>
                     </div>
                     {{/times}}
@@ -61,7 +61,7 @@
                 <div class="row">
                     {{#times num.food}}
                     <div class="input-field col s12 m6">
-                        <input id="food" type="text" class="validate">
+                        <input id="food" type="text" class="validate" name="food[]">
                         <label for="food">(i.e. sushi, burrito)</label>
                     </div>
                     {{/times}}
@@ -71,7 +71,7 @@
                 <div class="row">
                     {{#times num.person}}
                     <div class="input-field col s12 m6">
-                        <input id="person" type="text" class="validate">
+                        <input id="person" type="text" class="validate" name="person[]">
                         <label for="person">(i.e. Mr. Rogers, Usher)</label>
                     </div>
                     {{/times}}
@@ -81,15 +81,74 @@
                 <div class="row">
                     {{#times num.number}}
                     <div class="input-field col s12 m6">
-                        <input id="person" type="text" class="validate">
-                        <label for="person">(i.e. 7, a billion)</label>
+                        <input id="number" type="text" class="validate" name="number[]">
+                        <label for="number">(i.e. 7, a thousand)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.dwelling}}
+                <h6>Dwelling</h6>
+                <div class="row">
+                    {{#times num.dwelling}}
+                    <div class="input-field col s12 m6">
+                        <input id="dwelling" type="text" class="validate" name="dwelling[]">
+                        <label for="dwelling">(i.e. shack, mansion)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.first_name}}
+                <h6>First Name</h6>
+                <div class="row">
+                    {{#times num.first_name}}
+                    <div class="input-field col s12 m6">
+                        <input id="firstName" type="text" class="validate" name="firstName[]">
+                        <label for="firstName">(i.e. Barack, Timmy)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.last_name}}
+                <h6>Last Name</h6>
+                <div class="row">
+                    {{#times num.last_name}}
+                    <div class="input-field col s12 m6">
+                        <input id="lastName" type="text" class="validate" name="lastName[]">
+                        <label for="lastName">(i.e. Cosby, Johnson)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.relationship}}
+                <h6>Relationship</h6>
+                <div class="row">
+                    {{#times num.relationship}}
+                    <div class="input-field col s12 m6">
+                        <input id="relationship" type="text" class="validate" name="relationship[]">
+                        <label for="relationship">(i.e. sister, boyfriend)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.genre}}
+                <h6>Genre</h6>
+                <div class="row">
+                    {{#times num.genre}}
+                    <div class="input-field col s12 m6">
+                        <input id="genre" type="text" class="validate" name="genre[]">
+                        <label for="genre">(i.e. Funk, Punk)</label>
+                    </div>
+                    {{/times}}
+                </div>
+                {{/if}}{{#if num.profession}}
+                <h6>Profession</h6>
+                <div class="row">
+                    {{#times num.profession}}
+                    <div class="input-field col s12 m6">
+                        <input id="profession" type="text" class="validate" name="profession[]">
+                        <label for="profession">(i.e. lawyer, hot dog vendor)</label>
                     </div>
                     {{/times}}
                 </div>
                 {{/if}}
             </div>
         </li>
-        {{#if num.verb}}
         <li>
             <div class="collapsible-header">Verbs</div>
             <div class="collapsible-body">
@@ -98,7 +157,7 @@
                 <div class="row">
                     {{#times num.verb}}
                     <div class="input-field col s12 m6">
-                        <input id="verb" type="text" class="validate">
+                        <input id="verb" type="text" class="validate" name="verb[]">
                         <label for="verb">(i.e. run, chortle)</label>
                     </div>
                     {{/times}}
@@ -106,10 +165,10 @@
                 {{/if}}{{#if num.verb_ing}}
                 <h6>Verb Ending in 'ing'</h6>
                 <div class="row">
-                    {{#times num.food}}
+                    {{#times num.verb_ing}}
                     <div class="input-field col s12 m6">
-                        <input id="food" type="text" class="validate">
-                        <label for="food">(i.e. dancing, flipping)</label>
+                        <input id="verb_ing" type="text" class="validate" name="verb_ing[]">
+                        <label for="verb_ing">(i.e. dancing, flipping)</label>
                     </div>
                     {{/times}}
                 </div>
@@ -118,22 +177,22 @@
                 <div class="row">
                     {{#times num.verb_ed}}
                     <div class="input-field col s12 m6">
-                        <input id="food" type="text" class="validate">
-                        <label for="food">(i.e. guzzled, flopped)</label>
+                        <input id="verb_ed" type="text" class="validate" name="verb_ed[]">
+                        <label for="verb_ed">(i.e. guzzled, flopped)</label>
                     </div>
                     {{/times}}
                 </div>
                 {{/if}}
             </div>
         </li>
-        {{/if}} {{#if num.adjective}}
+        {{#if num.adjective}}
         <li>
             <div class="collapsible-header">Adjectives</div>
             <div class="collapsible-body">
                 <div class="row">
                     {{#times num.adjective}}
                     <div class="input-field col s12 m6">
-                        <input id="adjective" type="text" class="validate">
+                        <input id="adjective" type="text" class="validate" name="adjective[]">
                         <label for="adjective">(i.e. smart, smelly)</label>
                     </div> {{/times}}
                 </div>
@@ -146,15 +205,17 @@
                 <div class="row">
                     {{#times num.adverb}}
                     <div class="input-field col s12 m6">
-                        <input id="adjective" type="text" class="validate">
-                        <label for="adjective">(i.e. briskly, sheepishly)</label>
+                        <input id="adverb" type="text" class="validate" name="adverb[]">
+                        <label for="adverb">(i.e. briskly, sheepishly)</label>
                     </div> {{/times}}
                 </div>
             </div>
         </li>
         {{/if}}
     </ul>
-    <button class="btn waves-effect waves-light salmon" type="submit" name="action">Submit
+    <input id="storyId" type="text" class="validate" name="storyId" value="{{storyId}}">
+
+    <button class="btn waves-effect waves-light salmon" type="submit">Submit
         <i class="material-icons right">send</i>
         </button>
 </form>
