@@ -25,14 +25,13 @@ module.exports = function (app) {
             console.log(dbUserwords);
             res.render("reveal", {
                 storyArray: storyBuilder(dbUserwords),
-                storyName: dbObject.Story.storyName
+                storyName: dbUserwords.Story.storyName
             });
 
         });
     });
 
     app.post("/api/formsubmit", function (req, res) {
-        console.log(req.body);
 
         var wordObject = {
             noun: JSON.stringify(req.body.noun),
@@ -51,7 +50,6 @@ module.exports = function (app) {
             StoryId: parseInt(req.body.storyId)
         }
         db.User_words.create(wordObject).then(function (dbUserWords) {
-            console.log(JSON.parse(JSON.stringify(dbUserWords)));
             res.redirect("/reveal/" + dbUserWords.id);
         });
     });
