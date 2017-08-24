@@ -1,6 +1,7 @@
 // *********************************************************************************
 // cards-routes.js - this file offers a set of routes 
 // for displaying the cards
+
 // *********************************************************************************
 
 // Dependencies
@@ -32,4 +33,4 @@ module.exports = function (app) {
 
         });
     });
-}
+};
