@@ -1,6 +1,7 @@
 // *********************************************************************************
 // cards-routes.js - this file offers a set of routes 
 // for displaying the cards
+
 // *********************************************************************************
 
 // Dependencies
@@ -27,8 +28,9 @@ module.exports = function (app) {
             res.render("cards", {
                 storyArray: storyBuilder(dbUserwords),
                 storyName: dbUserwords.Story.storyName
+
             });
 
         });
     });
-}
+};
