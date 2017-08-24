@@ -30,7 +30,16 @@ require("./routes/story-routes.js")(app);
 require("./routes/userwords-routes.js")(app);
 require("./routes/cards-routes.js")(app);
 
-db.sequelize.sync({ force: true }).then(function () {
+
+var sequelizeForce = true;
+//if this is production, don't force sync the db. We don't want to wipe out the db
+// every time we merge code into master
+if(process.env.PORT){
+    sequelizeForce = false;
+}
+
+
+db.sequelize.sync({ force: sequelizeForce }).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
