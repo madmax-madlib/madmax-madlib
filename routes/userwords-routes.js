@@ -15,7 +15,7 @@ var storyBuilder = require("../storyBuilder.js");
 module.exports = function (app) {
 
     // finds all of the user word input from enter-my-story form page to reveal-my-story page
-    app.get("/reveal/:id", function (req, res) {
+    app.get("/summary/:id", function (req, res) {
         db.User_words.findOne({
             include: [db.Stories],
             where: {
@@ -23,7 +23,7 @@ module.exports = function (app) {
             }
         }).then(function (dbUserwords) {
             console.log(dbUserwords);
-            res.render("reveal", {
+            res.render("summary", {
                 storyArray: storyBuilder(dbUserwords),
                 storyName: dbUserwords.Story.storyName,
                 id: req.params.id
