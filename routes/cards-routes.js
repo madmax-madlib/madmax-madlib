@@ -27,8 +27,8 @@ module.exports = function (app) {
             console.log(dbUserwords);
             res.render("cards", {
                 storyArray: storyBuilder(dbUserwords),
-                storyName: dbUserwords.Story.storyName
-
+                storyName: dbUserwords.Story.storyName,
+                id: req.params.id
             });
 
         });
