@@ -1,26 +1,34 @@
+// *********************************************************************************
+// cards-routes.js - this file offers a set of routes 
+// for displaying the cards
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
+
+// Requiring our models
+var db = require("../models");
+var storyBuilder = require("../storyBuilder.js");
+
+// Routes
+// =============================================================
+
 module.exports = function (app) {
 
-//Routes
-app.get("/cards", function (req, res) {
-            var cardObject = {
-               storyName:"storyName", 
-               storyDesc:"storyDesc",
-               basicURL:"http://static.rogerebert.com/uploads/movie/movie_poster/up-2009/large_zh9DXJhBdHVVaWiDURTipADamcK.jpg",
-               segments: ["segment1", "segment2", "segment3", "segment4", "segment5", "segment6", "segment7", "segment8", "segment9", "segment10"],
-               segment1:"segment1",
-               segment2:"segment2",
-               segment3:"segment3",
-               segment4:"segment4",
-               segment5:"segment5",
-               segment6:"segment6",
-               segment7:"segment7",
-               segment8:"segment8",
-               segment9:"segment9",
-               segment10:"segment10",
-               createdAt:12,
-               updatedAt:14
-            };
-            //res.render("cards", cardObject);
-            res.render("cards", {"card": cardObject});
+    //Routes
+    app.get("/cards/:id", function (req, res) {
+        db.User_words.findOne({
+            include: [db.Stories],
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbUserwords) {
+            console.log(dbUserwords);
+            res.render("cards", {
+                storyArray: storyBuilder(dbUserwords),
+                storyName: dbUserwords.Story.storyName
+            });
+
+        });
     });
-};
+}

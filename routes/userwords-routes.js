@@ -50,7 +50,7 @@ module.exports = function (app) {
             StoryId: parseInt(req.body.storyId)
         }
         db.User_words.create(wordObject).then(function (dbUserWords) {
-            res.redirect("/reveal/" + dbUserWords.id);
+            res.redirect("/cards/" + dbUserWords.id);
         });
     });
 };
