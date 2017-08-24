@@ -19,6 +19,7 @@ module.exports = function (app) {
             var storyObject = {
                 story: dbResponse
             };
+            console.log(JSON.stringify(storyObject));
             res.render("menu", storyObject);
         });
     });
