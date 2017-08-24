@@ -14,8 +14,9 @@ module.exports = function (sequelize, DataTypes) {
 
         imageUrls: {
             type: DataTypes.STRING,
-            allwNull: false
-        }
+            allowNull: false
+        },
+        
         segment1: {
             type: DataTypes.STRING,
             allowNull: false
