@@ -37,6 +37,11 @@ body {
     font-size: 20px;
 }
 
+.reveal-container {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
 #storyId {
     display: none;
 }
@@ -45,7 +50,7 @@ body {
     color: black;
 }
 
-.card-text{
+.card-text {
     font-size: 20px;
 }
 

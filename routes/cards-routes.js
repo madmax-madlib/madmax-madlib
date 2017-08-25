@@ -25,8 +25,22 @@ module.exports = function (app) {
             }
         }).then(function (dbUserwords) {
             console.log(dbUserwords);
+            var storyArray = storyBuilder(dbUserwords);
+            var cardArray = [];
+
+            for (var i = 0; i<storyArray.length; i++){
+                var cardObject = new Object();
+                cardObject.text = storyArray[i];
+                var j = i+1;
+                console.log(dbUserwords.Story["imageSegment"+j]);
+                cardObject.image = dbUserwords.Story["imageSegment"+j];
+                cardArray.push(cardObject);
+            }
+
+            console.log(cardArray);
+
             res.render("cards", {
-                storyArray: storyBuilder(dbUserwords),
+                cards: cardArray,
                 storyName: dbUserwords.Story.storyName,
                 id: req.params.id
             });
