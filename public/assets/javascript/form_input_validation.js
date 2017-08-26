@@ -1,4 +1,6 @@
 
+$("#submitBtn").on('click', function(){
+
     if($("#noun").val().trim() === "") {
       Materialize.toast('Please complete entering nouns!', 4000);
     }
@@ -74,5 +76,5 @@
     else if($("#adverb").val().trim() === "") {
       Materialize.toast('Please complete entering adverbs!', 4000);
     }
-
+}
     
