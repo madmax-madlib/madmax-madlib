@@ -77,5 +77,5 @@ $("body").on("click touchstart", "#submitBtn", function() {
     if($("#adverb").length && $("#adverb").val().trim() === "") {
       Materialize.toast('Please complete entering adverbs!', 4000);
     }
-}
+});
     

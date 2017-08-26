@@ -30,7 +30,8 @@ module.exports = function (dbObject) {
         firstName: JSON.parse(dbObject.first_name),
         lastName: JSON.parse(dbObject.last_name),
         genre: JSON.parse(dbObject.genre),
-        profession: JSON.parse(dbObject.profession)
+        profession: JSON.parse(dbObject.profession),
+        adverb: JSON.parse(dbObject.adverb)
     }
 
     // section below loops through each differnt given for each word type
@@ -168,6 +169,7 @@ module.exports = function (dbObject) {
         }
     }
     if (wordObject.firstName) {
+        console.log(wordObject.firstName);
         for (var i = 0; i < wordObject.firstName.length; i++) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
                 if (arrayOfSegments[j].includes("<<first name>>")) {
@@ -202,6 +204,16 @@ module.exports = function (dbObject) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
                 if (arrayOfSegments[j].includes("<<profession>>")) {
                     arrayOfSegments[j] = arrayOfSegments[j].replace("<<profession>>", wordObject.profession[i]);
+                    break;
+                }
+            }
+        }
+    }
+    if (wordObject.adverb) {
+        for (var i = 0; i < wordObject.adverb.length; i++) {
+            for (var j = 0; j < arrayOfSegments.length; j++) {
+                if (arrayOfSegments[j].includes("<<adverb>>")) {
+                    arrayOfSegments[j] = arrayOfSegments[j].replace("<<adverb>>", wordObject.adverb[i]);
                     break;
                 }
             }

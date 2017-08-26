@@ -40,14 +40,21 @@ module.exports = function (app) {
             person: JSON.stringify(req.body.person),
             place: JSON.stringify(req.body.place),
             number: JSON.stringify(req.body.number),
-            verb: JSON.stringify(req.body.verb),
-            adjective: JSON.stringify(req.body.adjective),
-            adverb: JSON.stringify(req.body.adverb),
+            animal: JSON.stringify(req.body.animal),
+            first_name: JSON.stringify(req.body.firstName),
+            last_name: JSON.stringify(req.body.lastName),
             bodyPart: JSON.stringify(req.body.bodyPart),
             foodType: JSON.stringify(req.body.food),
+            profession: JSON.stringify(req.body.profession),
+            genre: JSON.stringify(req.body.genre),
+            relationship: JSON.stringify(req.body.relationship),
+            dwelling: JSON.stringify(req.body.dwelling),
+            verb: JSON.stringify(req.body.verb),
             verb_ing: JSON.stringify(req.body.verb_ing),
             verb_ed: JSON.stringify(req.body.verb_ed),
-            animal: JSON.stringify(req.body.animal),
+            adjective: JSON.stringify(req.body.adjective),
+            adverb: JSON.stringify(req.body.adverb),
+
             StoryId: parseInt(req.body.storyId)
         }
         db.User_words.create(wordObject).then(function (dbUserWords) {
