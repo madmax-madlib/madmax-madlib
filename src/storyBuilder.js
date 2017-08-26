@@ -20,6 +20,7 @@ module.exports = function (dbObject) {
         place: JSON.parse(dbObject.place),
         number: JSON.parse(dbObject.number),
         verb: JSON.parse(dbObject.verb),
+        verb_ed: JSON.parse(dbObject.verb_ed),
         adjective: JSON.parse(dbObject.adjective),
         bodyPart: JSON.parse(dbObject.bodyPart),
         foodType: JSON.parse(dbObject.foodType),
@@ -37,7 +38,7 @@ module.exports = function (dbObject) {
     // section below loops through each differnt given for each word type
     // and then loops through each story segment, replacing the instance of
     // the <<wordType>> with the word given by the user, and updates the segment
-    
+
     if (wordObject.noun) {
         for (var i = 0; i < wordObject.noun.length; i++) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
@@ -93,6 +94,16 @@ module.exports = function (dbObject) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
                 if (arrayOfSegments[j].includes("<<verb>>")) {
                     arrayOfSegments[j] = arrayOfSegments[j].replace("<<verb>>", wordObject.verb[i]);
+                    break;
+                }
+            }
+        }
+    }
+    if (wordObject.verb_ed) {
+        for (var i = 0; i < wordObject.verb_ed.length; i++) {
+            for (var j = 0; j < arrayOfSegments.length; j++) {
+                if (arrayOfSegments[j].includes("<<verb ending in ed>>")) {
+                    arrayOfSegments[j] = arrayOfSegments[j].replace("<<verb ending in ed>>", wordObject.verb_ed[i]);
                     break;
                 }
             }
