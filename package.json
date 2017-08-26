@@ -24,7 +24,8 @@
     "method-override": "^2.3.9",
     "mysql2": "^1.4.1",
     "path": "^0.12.7",
-    "sequelize": "^4.5.0"
+    "sequelize": "^4.5.0",
+    "serve-favicon": "^2.4.3"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
