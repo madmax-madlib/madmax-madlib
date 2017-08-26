@@ -1,10 +1,3 @@
-function wordReplace(segment, wordArray) {
-    for (var i = 0; i < wordArray.length; i++) {
-
-    }
-}
-
-
 module.exports = function (dbObject) {
     var StoryObj = dbObject.Story;
     var storyName = StoryObj.storyName;
@@ -39,6 +32,11 @@ module.exports = function (dbObject) {
         genre: JSON.parse(dbObject.genre),
         profession: JSON.parse(dbObject.profession)
     }
+
+    // section below loops through each differnt given for each word type
+    // and then loops through each story segment, replacing the instance of
+    // the <<wordType>> with the word given by the user, and updates the segment
+    
     if (wordObject.noun) {
         for (var i = 0; i < wordObject.noun.length; i++) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
@@ -209,8 +207,6 @@ module.exports = function (dbObject) {
             }
         }
     }
-
-
 
     return arrayOfSegments;
 }

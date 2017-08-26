@@ -27,8 +27,7 @@ function occurrences(string, subString, allowOverlapping) {
     return n;
 }
 
-module.exports = function (dbResponse) {
-    var story = dbResponse.segment1 + dbResponse.segment2 + dbResponse.segment3 + dbResponse.segment4 + dbResponse.segment5 + dbResponse.segment6 + dbResponse.segment7 + dbResponse.segment8 + dbResponse.segment9 + dbResponse.segment10;
+module.exports = function (story) {
     var wordCountObject = new Object();
 
     wordCountObject.noun = occurrences(story, "<<noun>>");
