@@ -1,5 +1,5 @@
 
-$("body").on("click touchstart", ".submit", function() {
+$("body").on("click touchstart", "#submitBtn", function() {
 
   
     if($("#noun").length && $("#noun").val().trim() === "") {
