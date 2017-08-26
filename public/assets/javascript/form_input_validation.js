@@ -1,78 +1,81 @@
 
-    if($("#noun").val().trim() === "") {
+$("body").on("click touchstart", "#submitBtn", function() {
+
+  
+    if($("#noun").length && $("#noun").val().trim() === "") {
       Materialize.toast('Please complete entering nouns!', 4000);
     }
 
-    else if($("#plural_noun").val().trim() === "") {
+    if($("#plural_noun").length && $("#plural_noun").val().trim() === "") {
       Materialize.toast('Please complete entering plural nouns!', 4000);
     }
 
-    else if($("#animal").val().trim() === "") {
+    if($("#animal").length && $("#animal").val().trim() === "") {
       Materialize.toast('Please complete entering animals!', 4000);
     }
 
-    else if($("#place").val().trim() === "") {
+    if($("#place").length && $("#place").val().trim() === "") {
       Materialize.toast('Please complete entering places!', 4000);
     }
 
-    else if($("#body_part").val().trim() === "") {
+    if($("#body_part").length && $("#body_part").val().trim() === "") {
       Materialize.toast('Please complete entering body parts!', 4000);
     }
 
-    else if($("#food").val().trim() === "") {
+    if($("#food").length && $("#food").val().trim() === "") {
       Materialize.toast('Please complete entering food!', 4000);
     }
 
-    else if($("#person").val().trim() === "") {
+    if($("#person").length && $("#person").val().trim() === "") {
       Materialize.toast('Please complete entering persons!', 4000);
     }
 
-    else if($("#number").val().trim() === "") {
+    if($("#number").length && $("#number").val().trim() === "") {
       Materialize.toast('Please complete entering numbers!', 4000);
     }
 
-    else if($("#dwelling").val().trim() === "") {
+    if($("#dwelling").length && $("#dwelling").val().trim() === "") {
       Materialize.toast('Please complete entering dwellings!', 4000);
     }
 
-    else if($("#firstName").val().trim() === "") {
+    if($("#firstName").length && $("#firstName").val().trim() === "") {
       Materialize.toast('Please complete entering first names!', 4000);
     }
 
-    else if($("#lastName").val().trim() === "") {
+    if($("#lastName").length && $("#lastName").val().trim() === "") {
       Materialize.toast('Please complete entering last names!', 4000);
     }
 
-    else if($("#relationship").val().trim() === "") {
+    if($("#relationship").length && $("#relationship").val().trim() === "") {
       Materialize.toast('Please complete entering relationships!', 4000);
     }
 
-    else if($("#genre").val().trim() === "") {
+    if($("#genre").length && $("#genre").val().trim() === "") {
       Materialize.toast('Please complete entering genres!', 4000);
     }
 
-    else if($("#profession").val().trim() === "") {
+    if($("#profession").length && $("#profession").val().trim() === "") {
       Materialize.toast('Please complete entering professions!', 4000);
     }
 
-    else if($("#verb").val().trim() === "") {
+    if($("#verb").length && $("#verb").val().trim() === "") {
       Materialize.toast('Please complete entering verbs!', 4000);
     }
 
-    else if($("#verb_ing").val().trim() === "") {
+    if($("#verb_ing").length && $("#verb_ing").val().trim() === "") {
       Materialize.toast('Please complete entering verbs ending in "ing"!', 4000);
     }
 
-    else if($("#verb_ed").val().trim() === "") {
+    if($("#verb_ed").length && $("#verb_ed").val().trim() === "") {
       Materialize.toast('Please complete entering verbs ending in "ed"!', 4000);
     }
 
-    else if($("#adjective").val().trim() === "") {
+    if($("#adjective").length && $("#adjective").val().trim() === "") {
       Materialize.toast('Please complete entering adjectives!', 4000);
     }
 
-    else if($("#adverb").val().trim() === "") {
+    if($("#adverb").length && $("#adverb").val().trim() === "") {
       Materialize.toast('Please complete entering adverbs!', 4000);
     }
-
+}
     
