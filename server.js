@@ -36,9 +36,9 @@ require("./src/routes/cards-routes.js")(app);
 var sequelizeForce = true;
 //if this is production, don't force sync the db. We don't want to wipe out the db
 // every time we merge code into master
-// if(process.env.PORT){
-//     sequelizeForce = false;
-// }
+if(process.env.PORT){
+    sequelizeForce = false;
+}
 
 
 db.sequelize.sync({ force: sequelizeForce }).then(function () {
