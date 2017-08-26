@@ -31,6 +31,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbResponse) {
+            var story = dbResponse.segment1 + dbResponse.segment2 + dbResponse.segment3 + dbResponse.segment4 + dbResponse.segment5 + dbResponse.segment6 + dbResponse.segment7 + dbResponse.segment8 + dbResponse.segment9 + dbResponse.segment10;
             res.render("form", {
                 helpers: {
                     times: function (n, block) {
@@ -40,7 +41,7 @@ module.exports = function (app) {
                         return accum;
                     }
                 },
-                num: deriveMissingWords(dbResponse),
+                num: deriveMissingWords(story),
                 title: dbResponse.storyName,
                 storyId: req.params.id
             });
