@@ -7,6 +7,7 @@ var favicon = require('serve-favicon');
 
 var app = express();
 var PORT = process.env.PORT || 8080;
+app.use(favicon(path.join(__dirname,'public','assets','images', 'favicon.ico')));
 
 // Requiring our models for syncing
 var db = require("./src/models");
@@ -19,7 +20,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("public"));
-app.use(favicon(path.join(__dirname,'public','assets','images', 'favicon.ico')));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
