@@ -169,7 +169,6 @@ module.exports = function (dbObject) {
         }
     }
     if (wordObject.firstName) {
-        console.log(wordObject.firstName);
         for (var i = 0; i < wordObject.firstName.length; i++) {
             for (var j = 0; j < arrayOfSegments.length; j++) {
                 if (arrayOfSegments[j].includes("<<first name>>")) {
